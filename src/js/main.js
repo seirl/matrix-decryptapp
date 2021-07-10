@@ -28,12 +28,8 @@ function decryptFileFromUrl(emxc_url) {
     }).then((data) => {
         // console.log(guessmime(data));
         var blob = new Blob([data], {type: guessmime(data)});
-        var reader = new FileReader();
-        reader.onloadend = function(e) {
-            var iframe = document.querySelector("#content")
-            iframe.setAttribute("src", reader.result);
-        }
-        reader.readAsDataURL(blob);
+        var blob_url = URL.createObjectURL(blob);
+        window.location.href = blob_url;
     });
 }
 
