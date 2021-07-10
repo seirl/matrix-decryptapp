@@ -14,7 +14,7 @@ encrypted images without using an external script.
 This trigger replaces all `emxc://` URLs to use an instance of this app hosted
 on https://seirl.github.io/ :
 
-    /trigger addreplace emxc_decrypt modifier weechat_print "" "!emxc://([^ ]+)!https://seirl.github.io/matrix-decryptapp/#${re:0}!"
+    /trigger addreplace emxc_decrypt modifier weechat_print "" ";($|[^\w/#:\[])(emxc://([^ ]+));${re:1}https://seirl.github.io/matrix-decryptapp/#${re:2};"
 
 If you do not trust this website to keep your encrypted URIs secure, the URL
 in the trigger can be replaced by your own deployment of this static website.
