@@ -3,7 +3,9 @@ import { Buffer } from 'buffer';
 // From https://github.com/kosinix/guess-file-type
 
 export const guessmime = data => {
-    var buffer = new Buffer(data);
+    var chunk = data.slice(0, 35);
+    var buffer = new Buffer(chunk);
+
     // Windows (or device-independent) bitmap image
     // bmp|dib
     // BM

@@ -26,8 +26,7 @@ function decryptFileFromUrl(emxc_url) {
     }).then(function(buffer) {
         return encrypt.decryptAttachment(buffer, info);
     }).then((data) => {
-    console.log("AFJKSDHFKSDHF");
-        console.log(guessmime(data));
+        // console.log(guessmime(data));
         var blob = new Blob([data], {type: guessmime(data)});
         var reader = new FileReader();
         reader.onloadend = function(e) {
