@@ -27,7 +27,7 @@ async function decryptFileFromUrl(emxc_url) {
     const href = URL.createObjectURL(blob);
     document.write(`
         <style>body, html { margin: 0; padding: 0; }</style>
-        <iframe src="${href}" frameborder="0" style="width:100%; height: 100%">
+        <iframe src="${href}" frameborder="0" style="width:100%; height: 100%" sandbox>
         </iframe>
     `);
 }
